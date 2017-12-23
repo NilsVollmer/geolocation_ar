@@ -16,7 +16,7 @@ class NetCommunicator
     request = Net::HTTP::Get.new(@uri)
     send_request_to_api request
   end
-
+  
   def send_request_to_api request
     http = Net::HTTP.new(@uri.host, @uri.port)
     http.use_ssl = true
