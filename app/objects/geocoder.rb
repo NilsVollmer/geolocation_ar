@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class Geocoder
   # TODO: Error handling (API URL changes, service offline, timeouts?)
 
@@ -27,22 +28,30 @@ class Geocoder
     parsed_json = JSON.parse(result.body)
     case api
     when :google
-      result = parsed_json['results'].map do |result|
-        {
-          'latitude' => result['geometry']['location']['lat'],
-          'longitude' => result['geometry']['location']['lng']
-        }
-      end.first
-      result = { 'status' => parsed_json['status'] } unless result
-      result
+      first_long_lat_google(parsed_json)
     when :osm
-      result = parsed_json.map do |result|
-        {'latitude' => result['lat'], 'longitude' => result['lon']}
-      end.first
-      # NOTE: nominatim just returns an empty result for unfound/empty queries
-      # so we return the same status as the google API does in this case
-      result = { 'status' => 'ZERO_RESULTS' } unless result
-      result
+      first_long_lat_osm(parsed_json)
     end
+  end
+
+  def first_long_lat_google parsed_json
+    result = parsed_json['results'].map do |res|
+      {
+        'latitude' => res['geometry']['location']['lat'],
+        'longitude' => res['geometry']['location']['lng']
+      }
+    end.first
+    result = { 'status' => parsed_json['status'] } unless result
+    result
+  end
+
+  # NOTE: nominatim just returns an empty result for unfound/empty queries
+  # so we return the same status as the google API does in this case
+  def first_long_lat_osm parsed_json
+    result = parsed_json.map do |res|
+      { 'latitude' => res['lat'], 'longitude' => res['lon'] }
+    end.first
+    result = { 'status' => 'ZERO_RESULTS' } unless result
+    result
   end
 end

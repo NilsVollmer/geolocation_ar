@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class OsmApiCommunicator < NetCommunicator
   def initialize
     super 'https://nominatim.openstreetmap.org/search'

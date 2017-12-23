@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class GoogleApiCommunicator < NetCommunicator
   def initialize
     super 'https://maps.googleapis.com/maps/api/geocode/json'

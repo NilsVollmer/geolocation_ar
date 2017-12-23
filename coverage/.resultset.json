@@ -2,10 +2,13 @@
   "MiniTest": {
     "coverage": {
       "/mnt/c/Users/achim/Documents/GitHub/geolocation_ar/app/helpers/application_helper.rb": [
+        null,
+        null,
         1,
         null
       ],
       "/mnt/c/Users/achim/Documents/GitHub/geolocation_ar/app/objects/google_api_communicator.rb": [
+        null,
         null,
         1,
         1,
@@ -20,6 +23,7 @@
         null
       ],
       "/mnt/c/Users/achim/Documents/GitHub/geolocation_ar/app/objects/net_communicator.rb": [
+        null,
         null,
         1,
         1,
@@ -49,15 +53,21 @@
         0,
         0,
         0,
+        0,
+        0,
         0
       ],
       "/mnt/c/Users/achim/Documents/GitHub/geolocation_ar/app/channels/application_cable/connection.rb": [
         0,
         0,
         0,
+        0,
+        0,
         0
       ],
       "/mnt/c/Users/achim/Documents/GitHub/geolocation_ar/app/controllers/application_controller.rb": [
+        0,
+        0,
         0,
         0,
         0,
@@ -83,9 +93,13 @@
       ],
       "/mnt/c/Users/achim/Documents/GitHub/geolocation_ar/app/jobs/application_job.rb": [
         0,
+        0,
+        0,
         0
       ],
       "/mnt/c/Users/achim/Documents/GitHub/geolocation_ar/app/mailers/application_mailer.rb": [
+        0,
+        0,
         0,
         0,
         0,
@@ -94,9 +108,20 @@
       "/mnt/c/Users/achim/Documents/GitHub/geolocation_ar/app/models/application_record.rb": [
         0,
         0,
+        0,
+        0,
         0
       ],
       "/mnt/c/Users/achim/Documents/GitHub/geolocation_ar/app/objects/geocoder.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -157,6 +182,7 @@
         0,
         0,
         0,
+        0,
         0
       ],
       "/mnt/c/Users/achim/Documents/GitHub/geolocation_ar/lib/application_responder.rb": [
@@ -167,9 +193,11 @@
         0,
         0,
         0,
+        0,
+        0,
         0
       ]
     },
-    "timestamp": 1514021184
+    "timestamp": 1514022099
   }
 }
