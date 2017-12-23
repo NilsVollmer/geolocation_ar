@@ -1,24 +1,28 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Simple Web App that takes a query-string, sends a GET-request to a third-party
+geocoding service (currently supports google and osm), parses the result and
+renders the long/lat JSON result. Only searches in germany.
 
-Things you may want to cover:
+* Usage
 
-* Ruby version
+ - /search_locations/<QUERY> or /search_locations?query=<QUERY> for a simple
+rendered lat/long JSON-result
+- uses google or osm geocoding (set via env var)
 
-* System dependencies
+* TODO
 
-* Configuration
+- more documentation (e.g. design choices)
+- deploy to heroku for live-showcase
+- Fix: random failing tests (test order and HTTP mocks)
 
-* Database creation
+* NOTE
 
-* Database initialization
+- implemented outside of normal dev-environment with Win10 64 build-in
+ubuntu app
 
-* How to run the test suite
+* Possible extensions
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- include name of used third-party geocoding service in result
+- cache geocoding results per uniq query-string e.g. (per geocode-gem)
+- more robust error handling and/or config vars (e.g. on api url changes)

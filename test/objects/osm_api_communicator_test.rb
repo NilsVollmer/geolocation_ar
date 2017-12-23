@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 require_relative '../test_helper'
-class GoogleApiCommunicatorTest < ActiveSupport::TestCase
-  let(:object) { GoogleApiCommunicator.new }
+class OsmApiCommunicatorTest < ActiveSupport::TestCase
+  let(:object) { OsmApiCommunicator.new }
 
   before do
     Net::HTTP.any_instance.stubs(:request)
@@ -16,7 +16,7 @@ class GoogleApiCommunicatorTest < ActiveSupport::TestCase
 
     it 'should call #get_from_api with apropriate data' do
       object.expects(:get_from_api).with(
-        address: 'TestLocation', region: 'test', key: 'test'
+        q: 'TestLocation', countrycodes: 'test', format: :json
       )
 
       object.get_location 'TestLocation'

@@ -4,7 +4,6 @@ require 'coveralls'
 
 SimpleCov.start 'rails' do
   add_filter "/test/"
-  # add_filter "/app/workers/subscribed_emails_mailings_spawner_worker.rb"
   minimum_coverage 100
 end
 

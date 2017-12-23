@@ -6,7 +6,7 @@ class Geocoder
   def geocode_long_lat_hash query_string
     api_sym = Rails.application.secrets.geocode[:geocoding_api].to_sym
     http_response = get_by_api(query_string, api_sym)
-    parse_results_by_api(http_response, api_sym)
+    http_response ? parse_results_by_api(http_response, api_sym) : {}
   end
 
   private
