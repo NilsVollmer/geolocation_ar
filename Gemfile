@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'pg', group: %i[production staging development] # postgres db
 gem 'responders'
 gem 'json'
 
